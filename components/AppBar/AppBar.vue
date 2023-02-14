@@ -39,28 +39,43 @@
           </v-btn>
         </template>
         <v-list>
-          <v-list-item
-            v-for="(item, index) in items"
-            :key="index"
-            :value="index"
-          >
-            <v-sheet style="display: flex; align-items: center">
-              <v-icon style="margin-right: 10px">{{ item.prepIcon }}</v-icon>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-sheet>
-            <template #append>
-              <v-switch
-                v-if="index === 0"
-                class="switch"
-                inset
-                hide-details
-                v-model="mode"
-              ></v-switch>
-            </template>
-          </v-list-item>
+          <v-sheet v-for="(item, index) in items">
+            <v-list-item v-if="!item.hasAppIcon" :key="index" :value="index">
+              <v-sheet style="display: flex; align-items: center">
+                <v-icon style="margin-right: 10px">{{ item.prepIcon }}</v-icon>
+                <v-list-item-title>{{ item.title }}</v-list-item-title>
+              </v-sheet>
+              <template #append>
+                <v-switch
+                  v-if="index === 0"
+                  color="blue-darken-3"
+                  inset
+                  hide-details
+                  v-model="mode"
+                ></v-switch>
+              </template>
+            </v-list-item>
+            <v-list-group v-else :value="index">
+              <template #activator="{ props }">
+                <v-list-item v-bind="props">
+                  <v-sheet style="display: flex; align-items: center">
+                    <v-icon style="margin-right: 10px">{{
+                      item.prepIcon
+                    }}</v-icon>
+                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                  </v-sheet>
+                </v-list-item>
+              </template>
+
+              <v-list-item>
+                <v-list-item-title>dupa</v-list-item-title></v-list-item
+              >
+            </v-list-group>
+          </v-sheet>
           <v-divider></v-divider>
+
           <v-list-item key="log" value="xd">
-            <v-sheet style="display: flex">
+            <v-sheet style="display: flex; align-items: center">
               <v-icon style="margin-right: 10px">mdi-logout-variant</v-icon>
               <v-list-item-title> Log In / Sign Up </v-list-item-title>
             </v-sheet>
@@ -109,16 +124,32 @@ const mode = ref<boolean>(false);
 </script>
 
 <style lang="scss" scoped>
-$input-control-height: 0;
+.v-menu {
+  .v-list-item {
+    &-title {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+      margin-right: 2rem;
+    }
+
+    .v-switch {
+      height: 48px;
+      :deep(.v-input__control) {
+        height: 48px;
+      }
+      :deep(.v-selection-control) {
+        min-height: 48px;
+      }
+      :deep(.v-switch__thumb) {
+        color: white !important;
+      }
+    }
+  }
+}
 .v-app-bar {
   &-nav-icon {
     opacity: 1;
-  }
-
-  .v-menu {
-    .v-list-item {
-      max-height: 48px !important;
-    }
   }
 
   .v-toolbar__append {
@@ -152,7 +183,5 @@ $input-control-height: 0;
   :deep(.v-toolbar__prepend) {
     margin-inline-end: 20%;
   }
-
-  
 }
 </style>
