@@ -159,6 +159,7 @@ const mode = ref<boolean>(false);
       font-family: Noto Sans, Arial, sans-serif;
       font-size: 14px;
       font-weight: 700;
+      text-transform: capitalize;
     }
   }
   .v-sheet {
