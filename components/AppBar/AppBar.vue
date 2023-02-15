@@ -67,9 +67,9 @@
                 </v-list-item>
               </template>
 
-              <v-list-item>
-                <v-list-item-title>dupa</v-list-item-title></v-list-item
-              >
+              <v-list-item v-for="(sub, index) in item.subList" :value="sub">
+                <v-list-item-title style="margin-left: 20px;">{{ sub }}</v-list-item-title>
+              </v-list-item>
             </v-list-group>
           </v-sheet>
           <v-divider></v-divider>
@@ -105,12 +105,29 @@ const items = [
     prepIcon: "mdi-information-outline",
     apIcon: "",
     hasAppIcon: true,
+    subList: [
+      "Reddit iOS",
+      "Reddit Android",
+      "Rereddit",
+      "Best Communities",
+      "Communities",
+      "About Reddit",
+      "Blog",
+      "Careers",
+      "Press",
+    ],
   },
   {
     title: "Terms & Policies",
     prepIcon: "mdi-view-list-outline",
     apIcon: "",
     hasAppIcon: true,
+    subList: [
+      "User Agreement",
+      "Privacy Policy",
+      "Content Policy",
+      "Moderator Code of Conduct",
+    ],
   },
   {
     title: "Advertise on Reddit",
