@@ -39,7 +39,10 @@
           </v-btn>
         </template>
         <v-list>
-          <v-sheet v-for="(item, index) in items">
+          <v-sheet
+            v-for="(item, index) in items"
+            style="&hover: background-color: blue;"
+          >
             <v-list-item v-if="!item.hasAppIcon" :key="index" :value="index">
               <v-sheet style="display: flex; align-items: center">
                 <v-icon style="margin-right: 10px">{{ item.prepIcon }}</v-icon>
@@ -68,7 +71,9 @@
               </template>
 
               <v-list-item v-for="(sub, index) in item.subList" :value="sub">
-                <v-list-item-title style="margin-left: 20px;">{{ sub }}</v-list-item-title>
+                <v-sheet style="margin-left: 10px; inline-size: 119px">
+                  {{ sub }}</v-sheet
+                >
               </v-list-item>
             </v-list-group>
           </v-sheet>
@@ -142,24 +147,49 @@ const mode = ref<boolean>(false);
 
 <style lang="scss" scoped>
 .v-menu {
-  .v-list-item {
-    &-title {
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 18px;
-      margin-right: 2rem;
+  .v-list {
+    width: 225px;
+
+    .v-sheet {
+      &:hover * {
+        background-color: blue;
+        color: white;
+      }
     }
 
-    .v-switch {
-      height: 48px;
-      :deep(.v-input__control) {
+    .v-list-item {
+      width: inherit;
+      height: 40px;
+      
+
+
+      &-title {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 18px;
+        margin-right: 0;
+      }
+      :deep(.v-icon) {
+        margin-left: 0;
+      }
+
+      .v-sheet {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+      }
+
+      .v-switch {
         height: 48px;
-      }
-      :deep(.v-selection-control) {
-        min-height: 48px;
-      }
-      :deep(.v-switch__thumb) {
-        color: white !important;
+        :deep(.v-input__control) {
+          height: 48px;
+        }
+        :deep(.v-selection-control) {
+          min-height: 48px;
+        }
+        :deep(.v-switch__thumb) {
+          color: white !important;
+        }
       }
     }
   }
