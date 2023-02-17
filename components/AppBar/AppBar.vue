@@ -39,10 +39,7 @@
           </v-btn>
         </template>
         <v-list>
-          <v-sheet
-            v-for="(item, index) in items"
-            style="&hover: background-color: blue;"
-          >
+          <v-sheet v-for="(item, index) in items" class="list-item">
             <v-list-item v-if="!item.hasAppIcon" :key="index" :value="index">
               <v-sheet style="display: flex; align-items: center">
                 <v-icon style="margin-right: 10px">{{ item.prepIcon }}</v-icon>
@@ -150,18 +147,18 @@ const mode = ref<boolean>(false);
   .v-list {
     width: 225px;
 
-    .v-sheet {
-      &:hover * {
-        background-color: blue;
-        color: white;
-      }
-    }
-
     .v-list-item {
       width: inherit;
       height: 40px;
-      
 
+      &:hover {
+        background: rgb(66, 92, 241);
+        color: white;
+      }
+      &:hover * {
+        background-color: rgb(66, 92, 241);
+        color: white;
+      }
 
       &-title {
         font-size: 14px;
@@ -181,6 +178,8 @@ const mode = ref<boolean>(false);
 
       .v-switch {
         height: 48px;
+        background-color: transparent;
+
         :deep(.v-input__control) {
           height: 48px;
         }
