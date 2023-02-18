@@ -6,31 +6,9 @@
       ></v-app-bar-nav-icon>
       <div class="text-h6">reddit</div>
     </template>
-    <v-sheet width="40%">
-      <v-text-field
-        variant="solo"
-        placeholder="Search"
-        density="comfortable"
-        prepend-inner-icon="mdi-magnify"
-        hide-details
-      ></v-text-field>
-    </v-sheet>
+    <search-field />
     <template #append>
-      <v-btn
-        class="btn-pill"
-        rounded="pill"
-        prepend-icon="mdi-qrcode-scan"
-        color="blue-darken-2"
-        variant="outlined"
-        >Get App</v-btn
-      >
-      <v-btn
-        class="btn-pill"
-        variant="elevated"
-        color="blue-darken-2"
-        rounded="pill"
-        >Log In</v-btn
-      >
+      <action-buttons />
       <v-menu transition="none" :close-on-content-click="false">
         <template v-slot:activator="{ props }">
           <v-btn v-bind="props">
@@ -89,6 +67,9 @@
 </template>
 
 <script setup lang="ts">
+import SearchField from "./SearchField.vue";
+import ActionButtons from "./ActionButtons.vue";
+
 const items = [
   {
     title: "Dark Mode",
@@ -196,17 +177,6 @@ const mode = ref<boolean>(false);
 .v-app-bar {
   &-nav-icon {
     opacity: 1;
-  }
-
-  .v-toolbar__append {
-    .btn-pill {
-      margin-inline: 10px;
-      width: 125px;
-      font-family: Noto Sans, Arial, sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: capitalize;
-    }
   }
   .v-sheet {
     :deep(.v-field--prepended) {

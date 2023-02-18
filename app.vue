@@ -19,4 +19,8 @@ useHead({
 const items = [{ title: "Tu" }, { title: "jest" }, { title: "dropdown" }];
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.v-main {
+  background-color: whitesmoke;
+}
+</style>
