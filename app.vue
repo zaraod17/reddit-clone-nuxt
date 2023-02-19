@@ -3,7 +3,10 @@
     <!--  -->
     <app-bar />
 
-    <v-navigation-drawer> </v-navigation-drawer>
+    <v-navigation-drawer>
+      
+    <side-bar />
+    </v-navigation-drawer>
     <v-main>
       <!--  -->
     </v-main>
