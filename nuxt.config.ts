@@ -5,6 +5,6 @@ export default defineNuxtConfig({
     "@mdi/font/css/materialdesignicons.min.css",
   ],
   build: {
-    transpile: ["vuetify", "@pinia/nuxt"],
+    transpile: ["vuetify", "pinia"],
   },
 });

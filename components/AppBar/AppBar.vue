@@ -69,6 +69,9 @@
 <script setup lang="ts">
 import SearchField from "./SearchField.vue";
 import ActionButtons from "./ActionButtons.vue";
+import { useAppBarStore } from "~/store/AppbarStore";
+
+const store = useAppBarStore();
 
 const items = [
   {

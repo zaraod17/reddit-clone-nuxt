@@ -50,4 +50,6 @@ export const useAppBarStore = defineStore("appbar", () => {
       hasAppIcon: false,
     },
   ];
+
+  return { items };
 });
