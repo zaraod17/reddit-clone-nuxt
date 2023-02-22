@@ -21,6 +21,20 @@
         <v-list-item-title>{{ subItem }}</v-list-item-title>
       </v-list-item>
     </v-list-group>
+    <v-divider style="margin-inline: 10%; margin-top: 10%"></v-divider>
+    <v-sheet class="account-text"
+      >Create an account to follow your favorite communities and start taking
+      part in conversations.
+    </v-sheet>
+    <v-sheet class="join-action">
+      <v-btn
+        class="btn-pill"
+        variant="elevated"
+        color="blue-darken-2"
+        rounded="pill"
+        >Join Reddit</v-btn
+      >
+    </v-sheet>
   </v-list>
 </template>
 
@@ -32,6 +46,39 @@ const { listItems } = store;
 </script>
 
 <style lang="scss" scoped>
+.join-action {
+  display: flex;
+  justify-content: center;
+
+  button {
+    width: 75%;
+  }
+
+}
+.account-text {
+  font: {
+    weight: 400;
+    size: 14px;
+    family: Noto Sans, Arial, sans-serif;
+  }
+  line-height: 18px;
+  margin-top: 20px;
+  padding: {
+    top: 4px;
+    left: 20px;
+    right: 24px;
+    bottom: 22px;
+  }
+}
+.btn-pill {
+  margin-inline: 10px;
+  width: 125px;
+  font-family: Noto Sans, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: capitalize;
+  box-shadow: 0;
+}
 .v-list-item {
   &-title {
     font-size: 14px;
