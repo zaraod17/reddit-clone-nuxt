@@ -1,14 +1,12 @@
 <template>
   <v-app id="inspire">
-    <!--  -->
     <app-bar />
 
     <v-navigation-drawer>
-      
-    <side-bar />
+      <side-bar />
     </v-navigation-drawer>
     <v-main>
-      <!--  -->
+    <trending-today />  
     </v-main>
   </v-app>
 </template>
@@ -18,8 +16,6 @@
 useHead({
   title: "Reddit",
 });
-
-const items = [{ title: "Tu" }, { title: "jest" }, { title: "dropdown" }];
 </script>
 
 <style scoped lang="scss">
