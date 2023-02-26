@@ -6,7 +6,8 @@
       <side-bar />
     </v-navigation-drawer>
     <v-main>
-    <trending-today />  
+    <trending-today /> 
+    <popular-posts /> 
     </v-main>
   </v-app>
 </template>

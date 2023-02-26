@@ -1,15 +1,17 @@
 <template>
-  <v-sheet class="trending">
-    <h6 class="font-weight-bold">Trending today</h6>
-    <v-sheet class="trending-items">
-      <v-card v-for="(item, index) in trendingItems" width="238" height="178">
-        <v-img cover :src="item.imgUrl"></v-img>
-        <v-sheet class="description">
-          <div class="text-h6 font-weight-bold">{{ item.title }}</div>
-          <div class="text-subtitle2">{{ item.subTitle }}</div>
-          <div class="text-caption">{{ item.category }}</div>
-        </v-sheet>
-      </v-card>
+  <v-sheet class="trending-wrapper">
+    <v-sheet class="trending">
+      <h6 class="font-weight-bold">Trending today</h6>
+      <v-sheet class="trending-items">
+        <v-card v-for="(item, index) in trendingItems" width="238" height="178">
+          <v-img cover :src="item.imgUrl"></v-img>
+          <v-sheet class="description">
+            <div class="text-h6 font-weight-bold">{{ item.title }}</div>
+            <div class="text-subtitle2">{{ item.subTitle }}</div>
+            <div class="text-caption">{{ item.category }}</div>
+          </v-sheet>
+        </v-card>
+      </v-sheet>
     </v-sheet>
   </v-sheet>
 </template>
@@ -48,6 +50,12 @@ const trendingItems = [
 </script>
 
 <style lang="scss" scoped>
+
+.trending-wrapper {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
 .trending {
   h6 {
     padding-left: 65px;
@@ -67,6 +75,7 @@ const trendingItems = [
     .v-card {
       position: relative;
       margin-left: 12px;
+      border-radius: 1rem;
       .v-img {
         height: 100%;
         position: relative;
@@ -78,8 +87,6 @@ const trendingItems = [
         position: absolute;
         background-color: transparent;
         color: white;
-
-        
       }
     }
   }
