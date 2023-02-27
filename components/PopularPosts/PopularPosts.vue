@@ -3,8 +3,8 @@
     <v-sheet class="popular-posts">
       <h6>Popular posts</h6>
       <v-card>
-        <v-chip prepend-icon="mdi-fire"><h4>Hot</h4></v-chip>
-        <v-chip>
+        <v-chip class="info-chip" prepend-icon="mdi-fire"><h4>Hot</h4></v-chip>
+        <v-chip class="info-chip">
           <div>
             <v-select
               :items="countries.items"
@@ -18,6 +18,27 @@
             </v-select>
           </div>
         </v-chip>
+        <v-chip
+          class="text-chip"
+          prepend-icon="mdi-decagram-outline"
+          variant="text"
+          ><h4>text</h4>
+        </v-chip>
+        <v-chip
+          class="text-chip"
+          prepend-icon="mdi-chart-line-variant"
+          variant="text"
+          ><h4>text</h4>
+        </v-chip>
+        <v-btn
+          icon="mdi-dots-horizontal"
+          variant="text"
+          color="grey-darken-1"
+        ></v-btn>
+        <v-btn variant="text" color="grey-darken-1"
+          ><v-icon size="x-large">mdi-view-agenda-outline</v-icon>
+          <v-icon size="x-large">mdi-chevron-down</v-icon></v-btn
+        >
       </v-card>
     </v-sheet>
   </v-sheet>
@@ -52,10 +73,22 @@ const countries = ref({
     background-color: transparent;
 
     .v-card {
-      :deep(.v-chip) {
+      :deep(.info-chip) {
         .v-icon,
         h4 {
           color: #0079d3;
+        }
+        &:hover {
+          background-color: #ababab;
+        }
+      }
+      :deep(.text-chip) {
+        .v-icon,
+        h4 {
+          color: grey;
+        }
+        &:hover {
+          background-color: #e6e6e6;
         }
       }
       :deep(.v-input__control) {
