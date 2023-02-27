@@ -12,6 +12,8 @@
               item-title="state"
               return-object
               hide-details
+              color="info"
+              variant="plain"
             >
             </v-select>
           </div>
@@ -63,11 +65,20 @@ const countries = ref({
         .v-field {
           &__input {
             padding-top: 5px;
+            padding-left: 10px;
             height: 32px !important;
 
             .v-select__selection {
               height: 32px;
             }
+            .v-select__selection-text {
+              color: #0079d3;
+              font-weight: 600;
+            }
+          }
+
+          &__overlay {
+            background-color: transparent;
           }
           &__append-inner {
             padding-top: 5px;
@@ -75,7 +86,6 @@ const countries = ref({
 
           &__field {
             height: 32px;
-            
           }
         }
       }
