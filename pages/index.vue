@@ -6,8 +6,15 @@
       <side-bar />
     </v-navigation-drawer>
     <v-main>
-    <trending-today /> 
-    <popular-posts /> 
+      <trending-today />
+      <v-container>
+        <v-row style="min">
+          <v-col cols="8">
+            <popular-posts />
+          </v-col>
+          <v-col></v-col>
+        </v-row>
+      </v-container>
     </v-main>
   </v-app>
 </template>

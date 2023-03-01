@@ -1,8 +1,8 @@
 <template>
-  <v-sheet class="popular-posts-wrapper">
-    <v-sheet class="popular-posts">
-      <h6>Popular posts</h6>
-      <v-card>
+  <v-sheet class="popular-posts">
+    <h6>Popular posts</h6>
+    <v-card>
+      <v-sheet class="ml-3">
         <v-chip class="info-chip" prepend-icon="mdi-fire"><h4>Hot</h4></v-chip>
         <v-chip class="info-chip">
           <div>
@@ -22,25 +22,50 @@
           class="text-chip"
           prepend-icon="mdi-decagram-outline"
           variant="text"
-          ><h4>text</h4>
+          ><h4>New</h4>
         </v-chip>
         <v-chip
           class="text-chip"
           prepend-icon="mdi-chart-line-variant"
           variant="text"
-          ><h4>text</h4>
+          ><h4>Top</h4>
         </v-chip>
         <v-btn
+          id="menu-activator"
           icon="mdi-dots-horizontal"
           variant="text"
           color="grey-darken-1"
-        ></v-btn>
-        <v-btn variant="text" color="grey-darken-1"
+        >
+        </v-btn>
+        <v-menu activator="#menu-activator">
+          <v-list>
+            <v-list-item
+              prepend-icon="mdi-arrow-up-thin"
+              title="Rising"
+              value="dndkjsnkj"
+            >
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </v-sheet>
+      <v-sheet >
+        <v-btn id="menu-activator-2" variant="text" color="grey-darken-1"
           ><v-icon size="x-large">mdi-view-agenda-outline</v-icon>
           <v-icon size="x-large">mdi-chevron-down</v-icon></v-btn
         >
-      </v-card>
-    </v-sheet>
+        <v-menu activator="#menu-activator-2">
+          <v-list>
+            <v-list-item prepend-icon="mdi-view-agenda">Card</v-list-item>
+            <v-divider></v-divider>
+            <v-list-item prepend-icon="mdi-view-sequential-outline"
+              >Classic</v-list-item
+            >
+            <v-divider></v-divider>
+            <v-list-item prepend-icon="mdi-view-headline">Compact</v-list-item>
+          </v-list>
+        </v-menu>
+      </v-sheet>
+    </v-card>
   </v-sheet>
 </template>
 
@@ -65,61 +90,63 @@ const countries = ref({
 </script>
 
 <style lang="scss" scoped>
-.popular-posts-wrapper {
+:deep(.mdi-arrow-up-thin) {
+  margin-right: 10px;
+}
+
+.popular-posts {
   background-color: transparent;
-  justify-content: center;
-  display: flex;
-  .popular-posts {
-    background-color: transparent;
 
-    .v-card {
-      :deep(.info-chip) {
-        .v-icon,
-        h4 {
-          color: #0079d3;
-        }
-        &:hover {
-          background-color: #ababab;
-        }
+  .v-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    :deep(.info-chip) {
+      .v-icon,
+      h4 {
+        color: #0079d3;
       }
-      :deep(.text-chip) {
-        .v-icon,
-        h4 {
-          color: grey;
-        }
-        &:hover {
-          background-color: #e6e6e6;
-        }
+      &:hover {
+        background-color: #e6e6e6;
       }
-      :deep(.v-input__control) {
-        height: 32px;
-        background-color: transparent !important;
+    }
+    :deep(.text-chip) {
+      .v-icon,
+      h4 {
+        color: grey;
+      }
+      &:hover {
+        background-color: #e6e6e6;
+      }
+    }
+    :deep(.v-input__control) {
+      height: 32px;
+      background-color: transparent !important;
 
-        .v-field {
-          &__input {
-            padding-top: 5px;
-            padding-left: 10px;
-            height: 32px !important;
+      .v-field {
+        &__input {
+          padding-top: 5px;
+          padding-left: 10px;
+          height: 32px !important;
 
-            .v-select__selection {
-              height: 32px;
-            }
-            .v-select__selection-text {
-              color: #0079d3;
-              font-weight: 600;
-            }
-          }
-
-          &__overlay {
-            background-color: transparent;
-          }
-          &__append-inner {
-            padding-top: 5px;
-          }
-
-          &__field {
+          .v-select__selection {
             height: 32px;
           }
+          .v-select__selection-text {
+            color: #0079d3;
+            font-weight: 600;
+          }
+        }
+
+        &__overlay {
+          background-color: transparent;
+        }
+        &__append-inner {
+          padding-top: 5px;
+        }
+
+        &__field {
+          height: 32px;
         }
       }
     }
