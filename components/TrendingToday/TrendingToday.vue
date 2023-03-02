@@ -70,7 +70,7 @@ const trendingItems = [
     display: flex;
 
     background-color: transparent !important;
-    margin-inline: 5%;
+    
 
     .v-card {
       position: relative;

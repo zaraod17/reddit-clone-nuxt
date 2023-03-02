@@ -1,8 +1,16 @@
 <template>
   <v-sheet class="popular-posts">
     <h6>Popular posts</h6>
-    <v-card>
-      <v-sheet class="ml-3">
+    <v-card width="640" height="61">
+      <v-sheet
+        class="ml-3"
+        style="
+          flex: 3;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        "
+      >
         <v-chip class="info-chip" prepend-icon="mdi-fire"><h4>Hot</h4></v-chip>
         <v-chip class="info-chip">
           <div>
@@ -48,7 +56,7 @@
           </v-list>
         </v-menu>
       </v-sheet>
-      <v-sheet >
+      <v-sheet style="flex: 1; justify-content: end; display: flex">
         <v-btn id="menu-activator-2" variant="text" color="grey-darken-1"
           ><v-icon size="x-large">mdi-view-agenda-outline</v-icon>
           <v-icon size="x-large">mdi-chevron-down</v-icon></v-btn
@@ -96,6 +104,10 @@ const countries = ref({
 
 .popular-posts {
   background-color: transparent;
+
+  h6 {
+    margin-bottom: 10px;
+  }
 
   .v-card {
     display: flex;

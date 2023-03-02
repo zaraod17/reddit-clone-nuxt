@@ -7,9 +7,9 @@
     </v-navigation-drawer>
     <v-main>
       <trending-today />
-      <v-container>
-        <v-row style="min">
-          <v-col cols="8">
+      <v-container fluid>
+        <v-row>
+          <v-col class="popular-posts-1" style="" cols="8">
             <popular-posts />
           </v-col>
           <v-col></v-col>
@@ -29,5 +29,11 @@ useHead({
 <style scoped lang="scss">
 .v-main {
   background-color: whitesmoke;
+
+  .popular-posts-1 {
+    display: flex;
+    justify-content: end;
+
+  }
 }
 </style>
