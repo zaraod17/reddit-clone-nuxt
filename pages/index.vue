@@ -12,7 +12,7 @@
           <v-col class="popular-posts-1" style="" cols="8">
             <popular-posts />
           </v-col>
-          <v-col></v-col>
+          <v-col><popular-tags /></v-col>
         </v-row>
       </v-container>
     </v-main>
