@@ -107,6 +107,10 @@ const countries = ref({
 
   h6 {
     margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    font-weight: 700;
   }
 
   .v-card {

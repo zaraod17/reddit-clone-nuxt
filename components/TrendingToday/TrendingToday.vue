@@ -58,7 +58,7 @@ const trendingItems = [
 }
 .trending {
   h6 {
-    padding-left: 65px;
+    padding-left: 1em;
     margin-block: 1rem;
     font-size: 14px;
     font-weight: 500;
