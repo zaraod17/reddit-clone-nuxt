@@ -2,9 +2,11 @@
   <v-card>
     <v-list>
       <v-list-group v-for="(item, index) in listItems" :value="item.title">
-        <template #activator="props">
+        <template #activator="{ props }">
           <v-list-item v-bind="props" :title="item.title"></v-list-item>
         </template>
+
+        <div>Exmple tag</div>
       </v-list-group>
     </v-list>
   </v-card>
