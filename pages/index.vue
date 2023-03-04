@@ -1,20 +1,17 @@
 <template>
   <v-app id="inspire">
     <app-bar />
-
     <v-navigation-drawer>
       <side-bar />
     </v-navigation-drawer>
     <v-main>
       <trending-today />
-      <v-container>
-        <v-row>
-          <v-col class="popular-posts-1" style="" cols="8">
-            <popular-posts />
-          </v-col>
-          <v-col><popular-tags /></v-col>
-        </v-row>
-      </v-container>
+      <v-sheet class="content-wrapper">
+        <v-sheet class="content">
+          <popular-posts />
+          <popular-tags />
+        </v-sheet>
+      </v-sheet>
     </v-main>
   </v-app>
 </template>
@@ -30,14 +27,18 @@ useHead({
 .v-main {
   background-color: whitesmoke;
 
-  .v-container {
-    padding-inline: 0;
-  }
-
-  .popular-posts-1 {
+  .content-wrapper {
+    margin-top: 20px;
     display: flex;
-    justify-content: end;
-    padding-right: 1rem
+    background-color: transparent;
+    justify-content: center;
+
+    .content {
+      display: inherit;
+      background-color: inherit;
+      width: 1000px;
+      justify-content: space-evenly;
+    }
   }
 }
 </style>

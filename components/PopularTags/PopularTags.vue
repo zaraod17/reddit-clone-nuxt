@@ -48,7 +48,7 @@ const listItems: Array<{ title: string; tags: string[] }> = [
 
 <style lang="scss" scoped>
 .v-card {
+  width: 310px;
   margin-top: 1.75rem;
-  margin-right: 1rem;
 }
 </style>
