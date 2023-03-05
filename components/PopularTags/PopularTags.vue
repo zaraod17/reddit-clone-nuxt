@@ -5,120 +5,51 @@
         <template #activator="{ props }">
           <v-list-item v-bind="props" :title="item.title"></v-list-item>
         </template>
-
-        <div>Exmple tag</div>
+        <v-sheet class="tags">
+          <span class="tag" v-for="(tag, i) in item.tags">{{ tag }}</span>
+        </v-sheet>
       </v-list-group>
     </v-list>
   </v-card>
 </template>
 
 <script setup lang="ts">
-const listItems: Array<{ title: string; tags: string[] }> = [
-  {
-    title: "Popular Communities",
-    tags: [
-      "AskReddit",
-      "NoStupidQuestions",
-      "DestinyTheGame",
-      "explainlikeimfive",
-      "AskMen",
-      "leaueoflegends",
-      "Minecraft",
-    ],
-  },
-  {
-    title: "Gaming",
-    tags: [
-      "StarewValley",
-      "FortniteCompetitive",
-      "Warframe",
-      "totalwar",
-      "Fallout",
-      "RocketLeague",
-      "fo76",
-      "yugioh",
-      "eu4",
-    ],
-  },
-  {
-    title: "Sports",
-    tags: [
-      "runing",
-      "soccer",
-      "bjj",
-      "MMA",
-      "hockey",
-      "formula1",
-      "CFB",
-      "barstoolsports",
-      "aitsoft",
-      "rugbyunion",
-      "golf",
-      "MTB",
-      "cycling",
-    ],
-  },
-  {
-    title: "Tv",
-    tags: [
-      "Naruto",
-      "BokuNoHeroAcademia",
-      "marvelstudios",
-      "tupauldragace",
-      "90DaysFiance",
-      "dbz",
-      "Boruto",
-    ],
-  },
-  {
-    title: "Travel",
-    tags: [
-      "vacouver",
-      "brasil",
-      "australia",
-      "mexico",
-      "argentina",
-      "melbourne",
-      "ottava",
-      "korea",
-      "ireland",
-      "travel",
-      "Calgary",
-      "portugal",
-    ],
-  },
-  {
-    title: "Health & Fitness",
-    tags: [
-      "orangetheory",
-      "bodybuilding",
-      "bodyweightfitness",
-      "vegan",
-      "crossfit",
-      "nattyorjuice",
-      "EatCheapAndHealthy",
-      "loseit",
-    ],
-  },
-  {
-    title: "Fashion",
-    tags: [
-      "MakeupAddiction",
-      "Watches",
-      "Beauty",
-      "BeautyGuruChatter",
-      "femalefashionadvice",
-      "frugalmalefashion",
-      "curlyhair",
-      "poshmark",
-    ],
-  },
-];
+import { usePopularTagsStore } from "~~/store/PopularTagsStore";
+
+const { listItems } = usePopularTagsStore();
 </script>
 
 <style lang="scss" scoped>
 .v-card {
   width: 310px;
   margin-top: 1.75rem;
+
+  .v-list-item-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    line-height: 12px;
+    text-transform: uppercase;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-inline: 10px;
+
+    .tag {
+      margin-inline: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 16px;
+      font-family: sans-serif;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
 }
 </style>
