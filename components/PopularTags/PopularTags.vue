@@ -5,8 +5,14 @@
         <template #activator="{ props }">
           <v-list-item v-bind="props" :title="item.title"></v-list-item>
         </template>
+
         <v-sheet class="tags">
-          <span class="tag" v-for="(tag, i) in item.tags">{{ tag }}</span>
+          <v-tooltip v-for="(tag, i) in item.tags" location="bottom right">
+            <template #activator="{ props: tooltip }">
+              <span class="tag" v-bind="mergeProps(tooltip)">{{ tag }}</span>
+            </template>
+            <span>{{ tag }}</span>
+          </v-tooltip>
         </v-sheet>
         <v-btn variant="text" color="info" rounded="pill">See more</v-btn>
       </v-list-group>
@@ -15,6 +21,7 @@
 </template>
 
 <script setup lang="ts">
+import { mergeProps } from "vue";
 import { usePopularTagsStore } from "~~/store/PopularTagsStore";
 
 const { listItems } = usePopularTagsStore();
@@ -32,7 +39,7 @@ const { listItems } = usePopularTagsStore();
   .v-list-item-title {
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     line-height: 12px;
     text-transform: uppercase;
   }
