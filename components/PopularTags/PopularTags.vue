@@ -8,6 +8,7 @@
         <v-sheet class="tags">
           <span class="tag" v-for="(tag, i) in item.tags">{{ tag }}</span>
         </v-sheet>
+        <v-btn variant="text" color="info" rounded="pill">See more</v-btn>
       </v-list-group>
     </v-list>
   </v-card>
@@ -23,6 +24,10 @@ const { listItems } = usePopularTagsStore();
 .v-card {
   width: 310px;
   margin-top: 1.75rem;
+
+  :deep(.v-btn__content) {
+    text-transform: capitalize;
+  }
 
   .v-list-item-title {
     font-size: 10px;
