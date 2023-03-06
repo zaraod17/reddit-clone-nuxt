@@ -10,10 +10,12 @@
           <v-menu
             v-for="(tag, i) in item.tags"
             close-on-content-click
+            close-on-back
             open-on-hover
+            location="bottom left"
           >
             <template #activator="{ props: menu }">
-              <v-tooltip location="end bottom">
+              <v-tooltip location="right bottom">
                 <template #activator="{ props: tooltip }">
                   <span class="tag" v-bind="mergeProps(tooltip, menu)">{{
                     tag
