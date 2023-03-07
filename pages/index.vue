@@ -9,7 +9,10 @@
       <v-sheet class="content-wrapper">
         <v-sheet class="content">
           <popular-posts />
-          <popular-tags />
+          <v-sheet class="tags-wrapper">
+            <popular-tags />
+            <side-footer />
+          </v-sheet>
         </v-sheet>
       </v-sheet>
     </v-main>
@@ -17,6 +20,7 @@
 </template>
 
 <script lang="ts" setup>
+import SideFooter from '../components/AppComponents/SideFooter.vue';
 // const drawer = ref<boolean | null>(null);
 useHead({
   title: "Reddit",
@@ -25,7 +29,7 @@ useHead({
 
 <style scoped lang="scss">
 .v-main {
-  background-color: whitesmoke;
+  background-color: #dae0e6;
 
   .content-wrapper {
     margin-top: 20px;
@@ -38,6 +42,11 @@ useHead({
       background-color: inherit;
       width: 1000px;
       justify-content: space-evenly;
+    }
+
+    .tags-wrapper {
+      margin-top: 1.75rem;
+      background-color: transparent;
     }
   }
 }

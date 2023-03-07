@@ -117,6 +117,7 @@ const countries = ref({
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-radius: 0;
     :deep(.info-chip) {
       .v-icon,
       h4 {
