@@ -8,7 +8,11 @@
       <trending-today />
       <v-sheet class="content-wrapper">
         <v-sheet class="content">
-          <popular-posts />
+          <v-sheet class="post-wrapper">
+            <popular-posts /> 
+            <post-card />
+          </v-sheet>
+
           <v-sheet class="tags-wrapper">
             <popular-tags />
             <side-footer />
@@ -20,7 +24,7 @@
 </template>
 
 <script lang="ts" setup>
-import SideFooter from '../components/AppComponents/SideFooter.vue';
+import SideFooter from "../components/AppComponents/SideFooter.vue";
 // const drawer = ref<boolean | null>(null);
 useHead({
   title: "Reddit",
@@ -47,6 +51,12 @@ useHead({
     .tags-wrapper {
       margin-top: 1.75rem;
       background-color: transparent;
+    }
+
+    .post-wrapper {
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
     }
   }
 }

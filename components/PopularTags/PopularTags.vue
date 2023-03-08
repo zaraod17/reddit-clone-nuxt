@@ -1,5 +1,5 @@
 <template>
-  <v-card :rounded="false">
+  <v-card>
     <v-list>
       <v-list-group v-for="(item, index) in listItems" :value="item.title">
         <template #activator="{ props }">
@@ -44,7 +44,7 @@ const { listItems } = usePopularTagsStore();
 <style lang="scss" scoped>
 .v-card {
   width: 310px;
-
+  border-radius: 0;
 
   :deep(.v-btn__content) {
     text-transform: capitalize;
