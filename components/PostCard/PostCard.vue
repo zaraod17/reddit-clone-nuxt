@@ -5,7 +5,13 @@
       <h4>100</h4>
       <v-icon>mdi-arrow-down-bold-outline</v-icon>
     </div>
-    <div>
+    <div class="post-content">
+      <div>
+        <v-avatar icon="mdi-account"></v-avatar>
+        <span>Community</span>
+        <span>Posted by u/user123 x hours ago</span>
+        <v-btn>Join</v-btn>
+      </div>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
       soluta recusandae aut impedit quibusdam ratione asperiores earum officiis
       ut, dolore est, qui ipsam in nostrum cumque tempore quae reiciendis
@@ -23,10 +29,16 @@
 
   .rating {
     color: gray;
+    .v-icon {
+      cursor: pointer;
+    }
 
     h4 {
       color: black;
     }
+  }
+  .post-content {
+    padding-left: 1rem;
   }
 }
 </style>
