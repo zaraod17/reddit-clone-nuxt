@@ -1,0 +1,107 @@
+.post-card {
+  display: flex;
+  margin-top: 1rem;
+  border-width: 1px;
+
+  &:hover {
+    cursor: pointer;
+    border-width: 1px;
+    border-color: #787c7e;
+  }
+
+  .rating {
+    color: gray;
+    background-color: #edeff1;
+
+    h4 {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 16px;
+      pointer-events: none;
+      word-break: normal;
+    }
+
+    .like {
+      &:hover {
+        color: rgb(99, 5, 5);
+      }
+    }
+
+    .dislike {
+      &:hover {
+        color: rgb(72, 72, 218);
+      }
+    }
+    .v-icon {
+      cursor: pointer;
+    }
+
+    h4 {
+      color: black;
+    }
+  }
+  .post-content {
+    padding-left: 1rem;
+
+    .post-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-inline-end: 0.5rem;
+
+      .community-tag {
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+
+      .v-btn {
+        font-family: Noto Sans, Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: unset;
+        line-height: 16px;
+        text-transform: unset;
+        box-shadow: none;
+      }
+      h6 {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        display: inline;
+        line-height: 20px;
+        text-decoration: none;
+        vertical-align: baseline;
+      }
+
+      span {
+        color: #787c7e;
+        font-size: 11px;
+        margin-inline: 2px;
+      }
+    }
+
+    .post-main {
+      font-weight: bold;
+      .v-sheet {
+        padding-inline: 0.2rem;
+      }
+      .v-img {
+        max-height: 500px;
+      }
+    }
+
+    .post-footer {
+      .v-btn {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        padding: 4px;
+        box-sizing: border-box;
+        text-transform: capitalize;
+        color: gray;
+      }
+    }
+  }
+}
