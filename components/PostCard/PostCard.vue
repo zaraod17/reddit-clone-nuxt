@@ -21,7 +21,17 @@
             <tag-menu />
           </v-menu>
           <span> . Posted by </span>
-          <span> u/user123</span>
+          <v-menu
+            open-on-click
+            close-on-content-click
+            close-on-back
+            location="bottom left"
+          >
+            <template #activator="{ props: userCard }">
+              <span v-bind="userCard"> u/user123</span>
+            </template>
+            <user-menu />
+          </v-menu>
           <v-tooltip location="top center">
             <template #activator="{ props: tooltip }">
               <span class="community-tag" v-bind="tooltip">x hours ago</span>
@@ -62,6 +72,7 @@
 
 <script setup lang="ts">
 import TagMenu from "../PopularTags/TagMenu.vue";
+import UserMenu from "../UserMenu/UserMenu.vue";
 </script>
 
 <style src="./PostCardStyles.scss" lang="scss" scoped></style>
