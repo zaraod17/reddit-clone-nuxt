@@ -22,7 +22,7 @@
           </v-menu>
           <span> . Posted by </span>
           <v-menu
-            open-on-click
+            open-on-hover
             close-on-content-click
             close-on-back
             location="bottom left"
@@ -47,6 +47,7 @@
           Exercitationem soluta recusandae aut impedit quibusdam ratione
           asperiores earum officiis ut, dolore est, qui ipsam in nostrum cumque
           tempore quae reiciendis debitis?
+          <v-chip>Tag</v-chip>
         </v-sheet>
         <v-img
           src="https://render.fineartamerica.com/images/rendered/default/poster/8/10/break/images/artworkimages/medium/1/smiling-raccoon-paul-freidlund.jpg"
@@ -73,6 +74,8 @@
 <script setup lang="ts">
 import TagMenu from "../PopularTags/TagMenu.vue";
 import UserMenu from "../UserMenu/UserMenu.vue";
+
+
 </script>
 
 <style src="./PostCardStyles.scss" lang="scss" scoped></style>

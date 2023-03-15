@@ -2,7 +2,7 @@
   <v-sheet width="40%">
     <v-text-field
       variant="solo"
-      placeholder="Search"
+      placeholder="Search Reddit"
       density="comfortable"
       prepend-inner-icon="mdi-magnify"
       hide-details
@@ -27,7 +27,7 @@ defineComponent({
     &:focus,
     &:focus-within {
       background-color: white;
-      border: 0.1px solid blue;
+      border-color: blue;
     }
 
     :deep(.v-switch) {

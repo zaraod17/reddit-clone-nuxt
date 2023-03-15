@@ -52,6 +52,7 @@ const { listItems } = store;
 
   button {
     width: 75%;
+    box-shadow: none;
   }
 
 }

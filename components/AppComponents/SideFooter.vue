@@ -12,7 +12,9 @@
       </div>
     </div>
     <v-divider color="white"></v-divider>
-    <span>Reddit Inc © 2023. All rights reserved</span>
+    <span style="margin-left: 2rem"
+      >Reddit Inc © 2023. All rights reserved</span
+    >
   </v-sheet>
 </template>
 
