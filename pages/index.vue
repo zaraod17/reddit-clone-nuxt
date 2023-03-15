@@ -9,7 +9,7 @@
       <v-sheet class="content-wrapper">
         <v-sheet class="content">
           <v-sheet class="post-wrapper">
-            <popular-posts /> 
+            <popular-posts />
             <post-card />
           </v-sheet>
 
@@ -19,6 +19,14 @@
           </v-sheet>
         </v-sheet>
       </v-sheet>
+      <v-btn
+        v-if="showButton"
+        class="scroll-top-btn"
+        rounded="pill"
+        color="info"
+        @click="scrollToTop"
+        >Back to Top</v-btn
+      >
     </v-main>
   </v-app>
 </template>
@@ -29,11 +37,49 @@ import SideFooter from "../components/AppComponents/SideFooter.vue";
 useHead({
   title: "Reddit",
 });
+
+const showButton = ref<boolean>(false);
+
+const handleScroll = () => {
+  if (process.client) {
+    showButton.value = window.pageYOffset > 100;
+  }
+};
+
+const scrollToTop = () => {
+  if (process.client) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+};
+
+onMounted(() => {
+  if (process.client) {
+    window.addEventListener("scroll", handleScroll);
+  }
+});
+
+onUnmounted(() => {
+  if (process.client) {
+    window.removeEventListener("scroll", handleScroll);
+  }
+});
 </script>
 
 <style scoped lang="scss">
 .v-main {
   background-color: #dae0e6;
+
+  .scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 70px;
+    box-shadow: none;
+    text-transform: none;
+    font-weight: bold;
+  }
 
   .content-wrapper {
     margin-top: 20px;
