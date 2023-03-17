@@ -1,6 +1,7 @@
 <template>
   <v-sheet width="40%">
     <v-autocomplete
+      density="compact"
       variant="solo"
       placeholder="Search Reddit"
       :items="trendingToday"
@@ -38,7 +39,10 @@
               </div>
             </div>
 
-            <img style="height: 70px; border-radius: 10px" :src="item?.raw?.img" />
+            <img
+              style="height: 70px; border-radius: 10px"
+              :src="item?.raw?.img"
+            />
           </v-sheet>
         </v-list-item>
       </template>

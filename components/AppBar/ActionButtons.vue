@@ -7,16 +7,12 @@
     variant="outlined"
     >Get App</v-btn
   >
-  <v-btn
-    class="btn-pill"
-    variant="elevated"
-    color="blue-darken-2"
-    rounded="pill"
-    >Log In</v-btn
-  >
+  <login-dialog />
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LoginDialog from '../AppComponents/LoginDialog.vue';
+</script>
 
 <style lang="scss" scoped>
 .btn-pill {
