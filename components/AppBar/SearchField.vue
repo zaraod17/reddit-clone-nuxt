@@ -8,13 +8,37 @@
       hide-details
       no-filter
     >
+      <template #prepend-item>
+        <span
+          style="
+            color: gray;
+            font-size: 12px;
+            margin-left: 1rem;
+            font-weight: 600;
+          "
+          >TRENDING TODAY</span
+        >
+      </template>
       <template #item="{ props, item }">
-        <v-list-item v-bind="{ props, item }" :value="item.title">
-          <v-sheet>
-            <div class="item-top">
-              <v-icon>mdi-arrow-right-circle-outline</v-icon>
-              <div>some text</div>
+        <v-list-item v-bind="{ item }" :value="item?.raw?.title">
+          <v-sheet style="display: flex; justify-content: space-between">
+            <div>
+              <div class="item-top">
+                <v-icon>mdi-arrow-right-circle-outline</v-icon>
+                <h5>{{ item?.raw?.title }}</h5>
+              </div>
+              <div class="item-bot">
+                <p>{{ item?.raw?.description }}</p>
+                <div style="color: gray">
+                  <v-icon>mdi-tag-outline</v-icon>
+                  <span style="margin-left: 4px; font-size: 12px"
+                    >community</span
+                  >
+                </div>
+              </div>
             </div>
+
+            <img style="height: 70px; border-radius: 10px" :src="item?.raw?.img" />
           </v-sheet>
         </v-list-item>
       </template>
@@ -31,25 +55,25 @@ const trendingToday: Array<{
 }> = [
   {
     title: "title1",
-    description: "some description",
+    description: "some description1",
     category: "some category1",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS80NuubzKZyPE5H7fJuUDzeHl7Kr70UeeA0g&usqp=CAU",
   },
   {
     title: "title2",
-    description: "some description",
+    description: "some description2",
     category: "some category2",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS80NuubzKZyPE5H7fJuUDzeHl7Kr70UeeA0g&usqp=CAU",
   },
   {
     title: "title3",
-    description: "some description",
+    description: "some description3",
     category: "some category3",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS80NuubzKZyPE5H7fJuUDzeHl7Kr70UeeA0g&usqp=CAU",
   },
   {
     title: "title4",
-    description: "some description",
+    description: "some description4",
     category: "some category4",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS80NuubzKZyPE5H7fJuUDzeHl7Kr70UeeA0g&usqp=CAU",
   },
