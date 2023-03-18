@@ -31,16 +31,41 @@
           <v-btn variant="outlined" rounded="pill" prepend-icon="mdi-apple"
             >Continue with Apple</v-btn
           >
-          <div class="divider">
-            <v-divider></v-divider>
-            <span>OR</span>
-            <v-divider></v-divider>
-          </div>
-          <div class="credentials">
-            <v-text-field variant="solo" density="compact" label="Username" hide-details></v-text-field>
-            <v-text-field variant="solo" label="Password" density="compact" hide-details></v-text-field>
-          </div>
         </div>
+        <div class="divider">
+          <v-divider></v-divider>
+          <span>OR</span>
+          <v-divider></v-divider>
+        </div>
+        <div class="credentials">
+          <v-text-field
+            variant="solo"
+            density="compact"
+            label="Username"
+            hide-details
+            required
+          ></v-text-field>
+          <v-text-field
+            variant="solo"
+            label="Password"
+            density="compact"
+            hide-details
+            required
+          ></v-text-field>
+        </div>
+        <div class="step-tip">
+          Forget your <NuxtLink to="/">username</NuxtLink> or
+          <NuxtLink to="/">password</NuxtLink> ?
+        </div>
+        <v-btn
+          class="login-btn"
+          variant="flat"
+          color="orange-darken-4"
+          rounded="pill"
+          density="default"
+          >Log In</v-btn
+        >
+        <div class="step-tip">New to Reddit? <NuxtLink to="/">Sign Up</NuxtLink> </div>
       </div>
     </v-sheet>
   </v-dialog>
@@ -116,14 +141,28 @@ const dialog = ref<boolean>(false);
         }
       }
       .credentials {
-
-        
         :deep(.v-field) {
-            margin-block: 5px;
+          margin-block: 5px;
           border-radius: 500px;
           box-shadow: none;
           background-color: rgb(247, 247, 247);
         }
+      }
+
+      .step-tip {
+        font-family: Noto Sans, sans-serif;
+        font-size: 12px;
+        letter-spacing: unset;
+        line-height: 16px;
+        margin-bottom: 0;
+        margin-top: 16px;
+      }
+      .login-btn {
+        width: 100%;
+        margin-top: 2rem;
+        text-transform: none;
+        letter-spacing: 0.25px;
+        font-weight: 700;
       }
     }
 
