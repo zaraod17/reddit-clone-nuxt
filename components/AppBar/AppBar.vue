@@ -131,9 +131,20 @@ const mode = ref<boolean>(false);
     }
   }
 }
-.v-app-bar {
+.v-toolbar {
   &-nav-icon {
     opacity: 1;
+  }
+
+  :deep(.v-toolbar__content) {
+    justify-content: space-between;
+  }
+  :deep(.v-toolbar__prepend) {
+    margin-right: 0;
+  }
+
+  :deep(.v-toolbar__append) {
+    margin-left: 0;
   }
   .v-sheet {
     :deep(.v-field--prepended) {
