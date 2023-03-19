@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
     <app-bar />
-    <v-navigation-drawer>
+    <v-navigation-drawer class="d-lg-flex">
       <side-bar />
     </v-navigation-drawer>
     <v-main>

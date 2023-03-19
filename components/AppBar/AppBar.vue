@@ -4,8 +4,9 @@
       <v-app-bar-nav-icon color="red" variant="plain"
         ><v-icon icon="mdi-reddit" size="x-large"></v-icon
       ></v-app-bar-nav-icon>
-      <div class="text-h6">reddit</div>
+      <div class="text-h6 d-none d-lg-inline">reddit</div>
     </template>
+    <topics-dropdown />
     <search-field />
     <template #append>
       <action-buttons />
@@ -68,6 +69,7 @@
 
 <script setup lang="ts">
 import SearchField from "./SearchField.vue";
+import TopicsDropdown from "./TopicsDropdown.vue";
 import ActionButtons from "./ActionButtons.vue";
 import { useAppBarStore } from "~/store/AppbarStore";
 
@@ -151,9 +153,6 @@ const mode = ref<boolean>(false);
         padding-left: 10px;
       }
     }
-  }
-  :deep(.v-toolbar__prepend) {
-    margin-inline-end: 20%;
   }
 }
 </style>
