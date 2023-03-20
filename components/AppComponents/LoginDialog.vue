@@ -1,14 +1,8 @@
 <template>
   <v-dialog v-model="dialog" width="auto">
     <template #activator="{ props }">
-      <v-btn
-        class="btn-pill"
-        variant="elevated"
-        color="blue-darken-2"
-        rounded="pill"
-        v-bind="props"
-        >Log In</v-btn
-      >
+      <slot name="activator" :props="props"></slot>
+    
     </template>
 
     <v-sheet>
@@ -65,7 +59,9 @@
           density="default"
           >Log In</v-btn
         >
-        <div class="step-tip">New to Reddit? <NuxtLink to="/">Sign Up</NuxtLink> </div>
+        <div class="step-tip">
+          New to Reddit? <NuxtLink to="/">Sign Up</NuxtLink>
+        </div>
       </div>
     </v-sheet>
   </v-dialog>

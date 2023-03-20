@@ -6,7 +6,7 @@
         :prepend-icon="selectedItem.icon"
         append-icon="mdi-chevron-down"
         v-bind="props"
-        >{{ selectedItem.title }}</v-btn
+        ><h4 class="d-none d-md-inline">{{ selectedItem.title }}</h4></v-btn
       >
     </template>
     <v-list>
@@ -66,7 +66,6 @@ const { listItems: items } = store;
 .activator-btn {
   text-transform: capitalize;
   letter-spacing: 0.25px;
-  min-width: 200px;
   font-weight: 700;
 }
 .btn-pill {

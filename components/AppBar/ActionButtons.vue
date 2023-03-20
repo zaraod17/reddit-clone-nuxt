@@ -7,7 +7,18 @@
     variant="outlined"
     >Get App</v-btn
   >
-  <login-dialog />
+  <login-dialog >
+    <template #activator="{props}">
+        <v-btn
+        class="btn-pill"
+        variant="elevated"
+        color="blue-darken-2"
+        rounded="pill"
+        v-bind="props"
+        >Log In</v-btn
+      >
+    </template>
+  </login-dialog>
 </template>
 
 <script setup lang="ts">
