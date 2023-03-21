@@ -3,7 +3,11 @@
     <v-sheet class="trending">
       <h6 class="font-weight-bold">Trending today</h6>
       <v-sheet class="trending-items">
-        <v-card v-for="(item, index) in trendingItems" width="238" height="178">
+        <v-card
+          v-for="(item, index) in filteredTrendingItems"
+          width="100%"
+          height="178"
+        >
           <v-img cover :src="item.imgUrl"></v-img>
           <v-sheet class="description">
             <div class="text-h6 font-weight-bold">{{ item.title }}</div>
@@ -17,6 +21,10 @@
 </template>
 
 <script setup lang="ts">
+import { useDisplay } from "vuetify";
+
+const display = useDisplay();
+
 const trendingItems = [
   {
     title: "trend1",
@@ -47,16 +55,30 @@ const trendingItems = [
       "https://images.theconversation.com/files/301120/original/file-20191111-194656-y6evbt.png?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
   },
 ];
+
+const filteredTrendingItems = computed(() => {
+  switch (display.name.value) {
+    case "xs":
+      return trendingItems.slice(0, 1);
+    case "sm":
+      return trendingItems.slice(0, 2);
+    case "md":
+      return trendingItems.slice(0, 3);
+    default:
+      return trendingItems;
+  }
+});
 </script>
 
 <style lang="scss" scoped>
-
 .trending-wrapper {
   background-color: transparent;
   display: flex;
   justify-content: center;
 }
 .trending {
+  width: 100%;
+  background-color: transparent;
   h6 {
     padding-left: 1em;
     margin-block: 1rem;
@@ -65,17 +87,17 @@ const trendingItems = [
     line-height: 18px;
     text-transform: unset;
   }
-  background-color: transparent;
   &-items {
     display: flex;
-
+    justify-content: space-around;
     background-color: transparent !important;
-    
+    margin-inline: 6px;
 
     .v-card {
       position: relative;
-      margin-left: 12px;
+      margin-inline: 0.4rem;
       border-radius: 1rem;
+      cursor: pointer;
       .v-img {
         height: 100%;
         position: relative;
