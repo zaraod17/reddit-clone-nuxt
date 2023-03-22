@@ -78,6 +78,7 @@ const filteredTrendingItems = computed(() => {
 }
 .trending {
   width: 100%;
+  max-width: 1000px;
   background-color: transparent;
   h6 {
     padding-left: 1em;
@@ -89,7 +90,7 @@ const filteredTrendingItems = computed(() => {
   }
   &-items {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     background-color: transparent !important;
     margin-inline: 6px;
 
@@ -97,6 +98,7 @@ const filteredTrendingItems = computed(() => {
       position: relative;
       margin-inline: 0.4rem;
       border-radius: 1rem;
+      /* max-width: 300px; */
       cursor: pointer;
       .v-img {
         height: 100%;

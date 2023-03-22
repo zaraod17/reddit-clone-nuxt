@@ -1,9 +1,9 @@
 <template>
   <v-sheet class="popular-posts">
     <h6>Popular posts</h6>
-    <v-card width="640" height="61">
+    <v-card>
       <v-sheet
-        class="ml-3"
+        class="ml-3 items"
         style="
           flex: 3;
           display: flex;
@@ -27,13 +27,13 @@
           </div>
         </v-chip>
         <v-chip
-          class="text-chip"
+          class="text-chip d-none d-md-flex"
           prepend-icon="mdi-decagram-outline"
           variant="text"
           ><h4>New</h4>
         </v-chip>
         <v-chip
-          class="text-chip"
+          class="text-chip d-none d-md-flex"
           prepend-icon="mdi-chart-line-variant"
           variant="text"
           ><h4>Top</h4>
@@ -43,6 +43,7 @@
           icon="mdi-dots-horizontal"
           variant="text"
           color="grey-darken-1"
+          class="d-none d-md-flex"
         >
         </v-btn>
         <v-menu activator="#menu-activator">
@@ -56,7 +57,7 @@
           </v-list>
         </v-menu>
       </v-sheet>
-      <v-sheet style="flex: 1; justify-content: end; display: flex">
+      <v-sheet class="items-2" style="flex: 1; justify-content: end; display: flex">
         <v-btn id="menu-activator-2" variant="text" color="grey-darken-1"
           ><v-icon size="x-large">mdi-view-agenda-outline</v-icon>
           <v-icon size="x-large">mdi-chevron-down</v-icon></v-btn
@@ -118,6 +119,8 @@ const countries = ref({
     align-items: center;
     justify-content: space-between;
     border-radius: 0;
+    width: 640px;
+    height: 61px;
     :deep(.info-chip) {
       .v-icon,
       h4 {
@@ -168,5 +171,27 @@ const countries = ref({
       }
     }
   }
+}
+
+@media only screen and (max-width: 960px) {
+
+.popular-posts{
+  width: 95%;
+  justify-content: center;
+  
+
+  .v-card {
+    width: 100%;
+    height: 61px;
+
+    .items {
+      justify-content: space-around !important;
+      flex: 2 !important;
+    }
+    .items-2 {
+      flex: 4 !important;
+    }
+  }
+}
 }
 </style>

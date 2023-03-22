@@ -13,7 +13,7 @@
             <post-card />
           </v-sheet>
 
-          <v-sheet class="tags-wrapper">
+          <v-sheet class="tags-wrapper d-none d-md-block">
             <popular-tags />
             <side-footer />
           </v-sheet>
@@ -82,6 +82,7 @@ onUnmounted(() => {
   }
 
   .content-wrapper {
+    padding: 0;
     margin-top: 20px;
     display: flex;
     background-color: transparent;
@@ -91,7 +92,7 @@ onUnmounted(() => {
       display: inherit;
       background-color: inherit;
       width: 1000px;
-      justify-content: space-evenly;
+      justify-content: space-around;
     }
 
     .tags-wrapper {
@@ -105,5 +106,18 @@ onUnmounted(() => {
       flex-direction: column;
     }
   }
+}
+
+@media only screen and (max-width: 960px) {
+
+  :deep(.content) {
+    width: 100% !important;
+  }
+  .post-wrapper {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
 }
 </style>
