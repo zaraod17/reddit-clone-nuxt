@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
     <app-bar />
-    <v-navigation-drawer class="d-lg-flex">
+    <v-navigation-drawer class="d-none d-lg-flex">
       <side-bar />
     </v-navigation-drawer>
     <v-main>
@@ -10,7 +10,7 @@
         <v-sheet class="content">
           <v-sheet class="post-wrapper">
             <popular-posts />
-            <post-card />
+            <post-card v-for="(post, index) in testArray" />
           </v-sheet>
 
           <v-sheet class="tags-wrapper d-none d-md-block">
@@ -37,6 +37,8 @@ import SideFooter from "../components/AppComponents/SideFooter.vue";
 useHead({
   title: "Reddit",
 });
+
+const testArray: string[] = Array(5).fill(Math.random().toString(), 0);
 
 const showButton = ref<boolean>(false);
 
@@ -109,7 +111,6 @@ onUnmounted(() => {
 }
 
 @media only screen and (max-width: 960px) {
-
   :deep(.content) {
     width: 100% !important;
   }
@@ -119,5 +120,9 @@ onUnmounted(() => {
     align-items: center;
   }
 
+  .scroll-top-btn {
+    right: 10px !important;
+    bottom: 30px !important;
+  }
 }
 </style>
