@@ -57,7 +57,10 @@
           </v-list>
         </v-menu>
       </v-sheet>
-      <v-sheet class="items-2" style="flex: 1; justify-content: end; display: flex">
+      <v-sheet
+        class="items-2"
+        style="flex: 1; justify-content: end; display: flex"
+      >
         <v-btn id="menu-activator-2" variant="text" color="grey-darken-1"
           ><v-icon size="x-large">mdi-view-agenda-outline</v-icon>
           <v-icon size="x-large">mdi-chevron-down</v-icon></v-btn
@@ -174,24 +177,22 @@ const countries = ref({
 }
 
 @media only screen and (max-width: 960px) {
-
-.popular-posts{
-  width: 95%;
-  justify-content: center;
-  
-
-  .v-card {
+  .popular-posts {
     width: 100%;
-    height: 61px;
+    justify-content: center;
 
-    .items {
-      justify-content: space-around !important;
-      flex: 2 !important;
-    }
-    .items-2 {
-      flex: 4 !important;
+    .v-card {
+      width: 100%;
+      height: 61px;
+
+      .items {
+        justify-content: space-around !important;
+        flex: 6 !important;
+      }
+      .items-2 {
+        flex: 4 !important;
+      }
     }
   }
-}
 }
 </style>

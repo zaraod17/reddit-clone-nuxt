@@ -2,7 +2,6 @@
   <v-dialog v-model="dialog" width="auto">
     <template #activator="{ props }">
       <slot name="activator" :props="props"></slot>
-    
     </template>
 
     <v-sheet>
@@ -167,6 +166,15 @@ const dialog = ref<boolean>(false);
       top: 0;
       right: 0;
       color: gray;
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .v-dialog {
+    .v-sheet {
+      width: 100% !important;
+      padding: 2rem;
     }
   }
 }

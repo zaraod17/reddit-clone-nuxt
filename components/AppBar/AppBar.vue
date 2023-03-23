@@ -1,7 +1,7 @@
 <template>
   <v-app-bar elevation="1">
-    <template #prepend>
-      <v-app-bar-nav-icon color="red" variant="text"
+    <template #prepend> 
+      <v-app-bar-nav-icon color="red" variant="text" :mobile-break-point="400"
         ><v-icon icon="mdi-reddit" size="x-large"></v-icon
       ></v-app-bar-nav-icon>
       <div class="text-h6 d-none d-lg-inline">reddit</div>
@@ -23,13 +23,7 @@ import SearchField from "./SearchField.vue";
 import TopicsDropdown from "./TopicsDropdown.vue";
 import ActionButtons from "./ActionButtons.vue";
 import ActionsDropdown from "./ActionsDropdown.vue";
-import { useAppBarStore } from "~/store/AppbarStore";
 
-const store = useAppBarStore();
-
-const { items } = store;
-
-const mode = ref<boolean>(false);
 </script>
 
 <style lang="scss" scoped>
