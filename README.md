@@ -2,6 +2,8 @@
 
 Nuxt, Vuetify, TypeScript, Pinia
 
+Deployed app: https://main--papaya-valkyrie-ec8beb.netlify.app/
+
 ## Setup
 
 Make sure to install the dependencies:
